@@ -2,9 +2,9 @@
 
 using namespace std;
 
-const int matDim = 6; /// Modificando questo valore si imposta la dimensione della matrice
+const int matDim = 6; /// Modificando questo valore si imposta la dimensione della matrice di adiacenza
 
-int matrix[matDim][matDim] = { -1,2,5,1,-1,-1, /// Contenuto della matrice
+int matrix[matDim][matDim] = { -1,2,5,1,-1,-1, /// matrice di adiacenza
                             3,-1,3,2,-1,-1,
                             8,6,-1,3,1,5,
                             7,2,3,-1,1,-1,
@@ -19,10 +19,10 @@ struct verticeType
 
 /**
     (*) selVertice: ritorna la posizione del vertice con distanza minima
-                che non Ë stato ancora visistato.
+                che non √® stato ancora visistato.
     (*) verticiVisitati: ritorna la conta dei vertici visitati
     (*) Dijkstra: algoritmo di dijkstra. Al termine della procedura l'array
-              di vertici conterr‡ tutte le distanze minime.
+              di vertici conterr√† tutte le distanze minime.
     (*) StampaMatrix: stampa la matrice.
     (*) stampaStatoVertici: stampa le informazioni dei vertici.
     (*) Reset di un array di vertici (visitato = 0) (distanza = -1)
@@ -99,14 +99,14 @@ void Dijkstra(int mat[matDim][matDim], verticeType vertice[], int verticeOrigine
         col = 0;
         for (int i = col; i < n; i++)
         {
-            if (mat[rig][i] != -1) /// se v Ë collegato con il vertice in esame
+            if (mat[rig][i] != -1) /// se v √® collegato con il vertice in esame
             {
                 /// se trovi un percorso migliore sostituisci l'etichetta
                 if (vertice[i].distanza > vertice[v].distanza + mat[rig][i] || vertice[i].distanza == -1)
                     vertice[i].distanza = vertice[v].distanza + mat[rig][i];
             }
         }
-        vertice[v].visitato = 1; /// imposta che il vertice v Ë stato visitato
+        vertice[v].visitato = 1; /// imposta che il vertice v √® stato visitato
     }
 }
 
